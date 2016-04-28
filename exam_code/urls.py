@@ -19,6 +19,4 @@ from . import views
 
 urlpatterns = [
     url(r'^', include('splash.urls')),
-    url(r'^tasks/', include('tasks.urls')),
-    url(r'^admin/', admin.site.urls),
 ]

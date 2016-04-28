@@ -1,31 +1,48 @@
 <html>
-<body style="background-image: url(&quot;http://p1.pichost.me/i/11/1339349.jpg&quot;);">
 
-<h1 style="color:white">Social Todo!</h1>
-<div>
-  <h2 style="color:white">Login</h2>
-   <form class="login-form" action="/login_form/" method="POST">
-     {% csrf_token %}
-      <label style="color:white" for="email">Email</label>
-      <input name="email" type="text"><br>
-      <label style="color:white" for="password">Password</label>
-      <input name="password" type="text"><br>
-      <input type="submit"  class="log-in-submit">
-   </form>
-</div>
-<div>
-   <hr>
-</div>
-<div>
-  <h2 style="color:white">Register</h2>
-   <form action="/register/" method="post" class="signup-form" style="display: block;">
-     {% csrf_token %}
-      <input name="fl_name" type="text" class="text-input" placeholder="first &amp; last name">
-      <input name="email" type="email" class="text-input" placeholder="email">
-      <input name="password" type="password" class="text-input" placeholder="password">
-      <input name="password_confirmation" type="password" class="text-input" placeholder="password confirmation">
-      <input class="sign-up-submit" type="submit">
-   </form>
-</div>
-</body>
+  <style>
+    #new-chat{
+
+    }
+
+    h1{
+      color:white;
+      position: absolute;
+      top: calc(10%);
+      right: calc(55%);
+    }
+
+    #new-chat input[type=submit]{
+      position: absolute;
+    	bottom: calc(10%);
+    	right: calc(55%);
+    	width: 260px;
+    	height: 35px;
+    	background: #fff;
+    	border: 1px solid #fff;
+    	cursor: pointer;
+    	border-radius: 2px;
+    	color: #a18d6c;
+    	font-family: 'Exo', sans-serif;
+    	font-size: 16px;
+    	font-weight: 400;
+    	padding: 6px;
+    	margin-top: 10px;
+  }
+  </style>
+
+  <body style="background-image: url(&quot;https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-1-full.jpg&quot;);">
+
+    <h1>Welcome to Chatter!</h1>
+
+    <div>
+      <h2 style="color:white">Chat</h2>
+       <form id="new-chat" action="/chat/" method="POST">
+         {% csrf_token %}
+          <input name="chat_entry" type="text"><br>
+          <input type="submit"  class="chat-submit" value = "Send Chat">
+       </form>
+    </div>
+
+  </body>
 </html>
